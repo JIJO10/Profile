@@ -51,11 +51,14 @@ header .logo{
     font-weight: 700;
 }
 
-span{
+span {
     background: var(--gradient-color-bg);
-    -webkit-background-clip: text;
-    color: transparent;
+    -webkit-background-clip: text; /* For Safari and older WebKit browsers */
+    -moz-background-clip: text;    /* For Firefox (might not be supported in all versions) */
+    background-clip: text;         /* Standard syntax */
+    color: transparent;            /* Make text transparent so background shows through */
 }
+
 
 ul.navlist{
     display: flex;
@@ -70,11 +73,15 @@ ul.navlist{
     font-weight: 600;
 }
 
-.navlist li a:hover,.navlist li a.active{
+.navlist li a:hover,
+.navlist li a.active {
     background: var(--gradient-color-bg);
-    -webkit-background-clip: text;
-    color: transparent;
+    -webkit-background-clip: text; /* For Safari and older WebKit browsers */
+    -moz-background-clip: text;    /* For Firefox (may not work in all versions) */
+    background-clip: text;         /* Standard syntax for modern browsers */
+    color: transparent;            /* Make the text color transparent to show the background */
 }
+
 
 .right-header{
     display: flex;
@@ -167,21 +174,23 @@ section{
     position: relative;
 }
 
-.text-animate h2{
+.text-animate h2 {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 1rem;
     color: transparent;
-    -webkit-text-stroke: 0.1vw #770753;
+    -webkit-text-stroke: 0.1vw #770753; /* Webkit-based browsers (Safari) */
     background: var(--gradient-color-bg);
     background-repeat: no-repeat;
-    -webkit-background-clip: text;
+    -webkit-background-clip: text; /* For Safari */
+    background-clip: text; /* Standard version */
     background-position: 0 0;
     transition: .6s;
     letter-spacing: 2px;
     animation: moveText 3s linear infinite;
     animation-delay: 2s;
 }
+
 
 .text-animate h2::before{
     content: "";
